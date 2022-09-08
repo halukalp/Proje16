@@ -30,6 +30,9 @@ public class Driver
             {
                 fileOutputStream.write(b);
             }
+
+            System.out.println(OKUNACAK_DOSYA + " dosyasının "
+                    + YAZILACAK_DOSYA + " dosyasına kopyalama işlemi tamamlandı.");
         }
         catch (FileNotFoundException e)
         {
@@ -38,6 +41,19 @@ public class Driver
         catch (IOException e)
         {
             Util.showGeneralException(e);
+        }
+        finally
+        {
+            try
+            {
+                if(fileInputStream != null) fileInputStream.close();
+
+                if(fileOutputStream != null) fileOutputStream.close();
+            }
+            catch (IOException e)
+            {
+                Util.showGeneralException(e);
+            }
         }
     }
 }
