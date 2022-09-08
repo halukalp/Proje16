@@ -4,6 +4,7 @@ import com.bt_akademi.team1.utility.Util;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 
 public class Driver
@@ -16,7 +17,13 @@ public class Driver
 
         try
         {
+            bufferedReader = new BufferedReader(new FileReader(OKUNACAK_DOSYA));
 
+            String line;
+            while( ( line = bufferedReader.readLine() ) != null)
+            {
+
+            }
         }
         catch (FileNotFoundException e)
         {
